@@ -4,7 +4,6 @@ use std::io::{BufRead, BufReader};
 use sha2::{Sha256, Digest};
 use std::process::exit;
 
-
 fn main() {
     let args: Vec<String> = env::args().collect();
 
