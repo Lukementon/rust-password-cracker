@@ -8,14 +8,14 @@ use std::process::exit;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    if args.len() != 2 {
-        println!("Invalid amount of arguments");
-        println!("Example: cargo run <sha256 hash>");
+    if args.len() != 3 {
+        println!("Please provide a hash and a wordlist");
+        println!("Example: cargo run <sha256 hash> <path to wordlist>");
         exit(1);
     }
 
     let wanted_hash = &args[1];
-    let password_file = "src/passwordlist.txt";
+    let password_file = &args[2];
     let mut attempts = 1;
 
     println!("Attempting to crack: {}!\n", wanted_hash);
